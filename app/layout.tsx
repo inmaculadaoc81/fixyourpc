@@ -7,6 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import CallButton from "@/components/CallButton";
 import Chatbot from "@/components/Chatbot";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieBanner from "@/components/CookieBanner";
 import { SITE } from "@/lib/site-config";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <CallButton />
         <Chatbot />
         <GoogleAnalytics />
+        <CookieBanner />
       </body>
     </html>
   );

@@ -50,6 +50,7 @@ export const NAV: NavItem[] = [
   { label: 'Recogida', href: '#recogida' },
   { label: 'Opiniones', href: '#confianza' },
   { label: 'Cita', href: '#cita' },
+  { label: 'Guía', href: '#guia' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Contacto', href: '#contacto' },
 ];

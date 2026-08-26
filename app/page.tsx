@@ -6,6 +6,7 @@ import PickupSection from "@/components/home/PickupSection";
 import TrustSection from "@/components/home/TrustSection";
 import GoogleYouTubeBlocks from "@/components/home/GoogleYouTubeBlocks";
 import CalSection from "@/components/home/CalSection";
+import GuideSection from "@/components/home/GuideSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/home/ContactSection";
 import { FAQS } from "@/lib/home-content";
@@ -34,6 +35,8 @@ export default function HomePage() {
         closes: "18:00",
       },
     ],
+    areaServed: "Madrid",
+    sameAs: [CONTACT.googleBusinessHref, CONTACT.youtubeHref],
     url: SITE.domain,
   };
 
@@ -70,6 +73,7 @@ export default function HomePage() {
       <TrustSection />
       <GoogleYouTubeBlocks />
       <CalSection />
+      <GuideSection />
       <FAQSection eyebrow={FAQS.eyebrow} title={FAQS.title} items={FAQS.items} />
       <ContactSection />
     </>

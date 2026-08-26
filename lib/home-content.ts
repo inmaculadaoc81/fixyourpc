@@ -5,9 +5,8 @@
 
 export const HERO = {
   kicker: "Reparación de portátiles y sobremesa MSI en Madrid",
-  title: "Tu MSI se ha estropeado.",
-  titleWorry:
-    "Ahora te preocupan dos cosas: cuánto tardarás en recuperarlo y si perderás lo que llevabas dentro.",
+  title: "Tu MSI no funciona.",
+  titleWorry: "Lo reparamos y protegemos tus archivos.",
   subtitle:
     "Antes de nada, vamos a mirarlo con calma: qué le pasa exactamente, si merece la pena repararlo y qué pasa con tus archivos. Diagnóstico gratuito, sin compromiso.",
   worries: [
@@ -148,6 +147,16 @@ export const CAL_BLOCK = {
   eyebrow: "¿Prefieres dejarlo agendado?",
   title: "Reserva una cita de 30 minutos",
   subtitle: "Elige el día y la hora que mejor te venga. Sin llamadas, sin esperas.",
+};
+
+export const GUIDE = {
+  eyebrow: "Guía",
+  title: "Qué suele fallar en un MSI y cómo lo revisamos",
+  paragraphs: [
+    "Los portátiles y sobremesa MSI, sobre todo los orientados a gaming, combinan componentes de alto rendimiento en espacios reducidos, lo que hace que la refrigeración, la placa base y la fuente de alimentación estén especialmente expuestas al desgaste. Las averías más habituales están relacionadas con sobrecalentamiento, apagados inesperados durante el uso intensivo, problemas de encendido y fallos de pantalla o de tarjeta gráfica.",
+    "Antes de dar cualquier presupuesto, el diagnóstico revisa el equipo de forma completa: alimentación, placa, memoria, almacenamiento, pantalla y sistema de refrigeración. Muchas veces el síntoma visible (por ejemplo, que el equipo no encienda) tiene una causa distinta a la que parece a simple vista, así que no partimos de suposiciones.",
+    "Si además te preocupa la información que tienes guardada, lo tenemos en cuenta desde el primer momento: identificamos qué se puede recuperar antes de intervenir en el equipo, para no arriesgar tus archivos por una reparación mal planteada.",
+  ],
 };
 
 export const FAQS = {

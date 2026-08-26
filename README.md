@@ -55,6 +55,23 @@ directamente en un iframe (no es un simple botón/enlace).
 
 ID configurado en `lib/site-config.ts` (`SITE.gaMeasurementId`): `G-X3KQHR8YV8`.
 
+## Banner de cookies
+
+`components/CookieBanner.tsx` (nuevo, no existía). Aceptar / Rechazar / enlace a la
+política de privacidad (`https://kelatos.com/privacy-policy/`), usa `localStorage` para
+recordar la elección, montado en `app/layout.tsx` junto al resto de widgets globales.
+
+## Schema.org
+
+`app/page.tsx` ya incluía LocalBusiness + Service + FAQPage. Se ha completado
+LocalBusiness con `areaServed` y `sameAs` (Google Business + YouTube), que faltaban.
+
+## Sección Guía
+
+`components/home/GuideSection.tsx` (nuevo, `id="guia"`, enlazado en el menú), con
+contenido propio sobre averías habituales en equipos MSI y cómo se plantea el
+diagnóstico. El contenido vive en `lib/home-content.ts` (`GUIDE`).
+
 ## Chatbot y WhatsApp
 
 El chatbot (`components/Chatbot.tsx`) reutiliza la integración de n8n (mismo webhook),
@@ -78,3 +95,18 @@ npm run build
   páginas de servicio/idioma/producto) se retiró del proyecto al pasar a landing de una
   sola página; si se necesita recuperar ese contenido más adelante, hay que volver a
   extraerlo de la web original.
+
+## Revisión (checklist de la familia Kelatos, esta pasada)
+
+- Ya estaba bien: Google Analytics (coincide con el código proporcionado), redirección
+  301 de URLs antiguas (`app/[slug]/page.tsx`, equivalente al `middleware.mjs` del resto
+  de la familia), teléfono consistente (un único número para caja de información y
+  botones, según comentario explícito en `site-config.ts`), formulario con SMTP +
+  nodemailer.
+- Añadido: banner de cookies, `areaServed`/`sameAs` en el schema LocalBusiness, sección
+  "Guía", borde blanco del botón del chat (faltaba en `.chat-window-toggle`), H1
+  reescrito (corto, afirmativo, sin interrogación ni condicionales, incluye la marca):
+  "Tu MSI no funciona. Lo reparamos y protegemos tus archivos." — con tamaño de fuente
+  aumentado (`text-4xl sm:text-5xl` → `text-5xl sm:text-6xl lg:text-7xl`).
+- Validado con `npm run build` (Next.js) y `npx eslint` sobre todos los archivos
+  tocados; ambos pasan sin errores.

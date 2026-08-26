@@ -26,7 +26,7 @@ export default function Hero() {
               <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
               {HERO.kicker}
             </span>
-            <h1 className="mt-5 max-w-2xl text-4xl font-extrabold tracking-tight text-balance text-brand-black sm:text-5xl">
+            <h1 className="mt-5 max-w-2xl text-5xl font-extrabold tracking-tight text-balance text-brand-black sm:text-6xl lg:text-7xl">
               {HERO.title}{" "}
               <span className="bg-linear-to-r from-brand-red to-brand-red-dark bg-clip-text text-transparent">
                 {HERO.titleWorry}

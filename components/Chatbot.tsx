@@ -103,6 +103,7 @@ export default function Chatbot() {
           width: 64px !important;
           height: 64px !important;
           border-radius: 50% !important;
+          border: 1px solid #fff !important;
           box-shadow: 0 4px 20px rgba(0, 74, 173, 0.4) !important;
           transition: transform 0.3s ease, box-shadow 0.3s ease !important;
           flex-shrink: 0 !important;
