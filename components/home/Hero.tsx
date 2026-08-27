@@ -32,19 +32,6 @@ export default function Hero() {
                 {HERO.titleWorry}
               </span>
             </h1>
-            <p className="mt-5 max-w-xl text-base text-brand-gray-700 lg:text-lg">{HERO.subtitle}</p>
-
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {HERO.worries.map((worry) => (
-                <li
-                  key={worry}
-                  className="rounded-full border border-brand-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-brand-gray-700"
-                >
-                  {worry}
-                </li>
-              ))}
-            </ul>
-
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <CTAButton href={CONTACT.whatsappHrefWithText("¡Hola MSITECH!")} variant="whatsapp" external>
                 WhatsApp · Atención 24 horas 365 días · {CONTACT.whatsappNumber}

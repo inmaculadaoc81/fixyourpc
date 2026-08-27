@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import CallButton from "@/components/CallButton";
 import Chatbot from "@/components/Chatbot";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import CookieBanner from "@/components/CookieBanner";
@@ -41,7 +40,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <WhatsAppButton />
-        <CallButton />
         <Chatbot />
         <GoogleAnalytics />
         <CookieBanner />

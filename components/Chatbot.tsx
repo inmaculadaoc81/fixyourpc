@@ -84,20 +84,24 @@ export default function Chatbot() {
     <>
       <div id="n8n-chat" />
       <style>{`
-        .chat-window-wrapper {
+        #n8n-chat .chat-window-wrapper,
+        #n8n-chat [class*="chat-window-wrapper"] {
           position: fixed !important;
           z-index: 9999 !important;
           display: flex !important;
           flex-direction: column !important;
           align-items: flex-end !important;
-          bottom: 130px !important;
+          bottom: 96px !important;
           right: 20px !important;
           width: auto !important;
           height: auto !important;
           pointer-events: none !important;
         }
-        .chat-window-wrapper > * { pointer-events: auto !important; }
-        .chat-window-toggle {
+        #n8n-chat .chat-window-wrapper > *,
+        #n8n-chat [class*="chat-window-wrapper"] > * { pointer-events: auto !important; }
+        #n8n-chat .chat-window-toggle,
+        #n8n-chat [class*="chat-window-toggle"] {
+          position: fixed !important;
           background: #004aad !important;
           color: #ffffff !important;
           width: 64px !important;
@@ -108,40 +112,49 @@ export default function Chatbot() {
           transition: transform 0.3s ease, box-shadow 0.3s ease !important;
           flex-shrink: 0 !important;
           z-index: 10000 !important;
+          right: 20px !important;
+          bottom: 96px !important;
         }
-        .chat-window-toggle:hover {
+        #n8n-chat .chat-window-toggle:hover,
+        #n8n-chat [class*="chat-window-toggle"]:hover {
           transform: scale(1.1) !important;
           background: #003c8f !important;
           box-shadow: 0 8px 25px rgba(0, 74, 173, 0.6) !important;
         }
-        .chat-window {
+        #n8n-chat .chat-window:not([class*="toggle"]),
+        #n8n-chat [class*="chat-window"]:not([class*="toggle"]):not([class*="wrapper"]) {
           width: 380px !important;
           max-height: 80vh !important;
           border-radius: 20px !important;
           margin-bottom: 15px !important;
           box-shadow: 0 5px 30px rgba(0,0,0,0.15) !important;
-          position: relative !important;
+          position: fixed !important;
+          right: 20px !important;
+          bottom: 166px !important;
+          z-index: 10000 !important;
         }
         .chat-powered-by { display: none; }
         @media (max-width: 600px) {
-          .chat-window-wrapper {
-            bottom: 170px !important;
+          #n8n-chat .chat-window-wrapper,
+          #n8n-chat [class*="chat-window-wrapper"] {
+            bottom: 90px !important;
             right: 0 !important;
             left: 0 !important;
             width: 100vw !important;
             align-items: center !important;
           }
-          .chat-window {
-            width: calc(100vw - 60px) !important;
-            max-width: 100vw !important;
-            height: 60vh !important;
-            order: 1 !important;
-            margin-bottom: 10px !important;
+          #n8n-chat .chat-window-toggle,
+          #n8n-chat [class*="chat-window-toggle"] {
+            right: 16px !important;
+            bottom: 90px !important;
           }
-          .chat-window-toggle {
-            align-self: flex-end !important;
-            margin-right: 20px !important;
-            order: 2 !important;
+          #n8n-chat .chat-window:not([class*="toggle"]),
+          #n8n-chat [class*="chat-window"]:not([class*="toggle"]):not([class*="wrapper"]) {
+            left: 12px !important;
+            right: 12px !important;
+            width: auto !important;
+            max-width: 100vw !important;
+            bottom: 160px !important;
           }
         }
       `}</style>
