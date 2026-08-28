@@ -12,7 +12,7 @@ export default function MobileNav({ open, onClose }: { open: boolean; onClose: (
       <button
         type="button"
         aria-label="Cerrar menú"
-        className="absolute inset-0 bg-black/40"
+        className="absolute inset-0 bg-black/60"
         onClick={onClose}
       />
       <div className="absolute inset-y-0 right-0 flex w-[85%] max-w-sm flex-col overflow-y-auto bg-white p-5 shadow-xl">
