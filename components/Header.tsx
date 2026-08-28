@@ -57,6 +57,10 @@ export default function Header() {
         </button>
       </div>
 
+      <div className="bg-amber-400 px-4 py-2 text-center text-xs font-bold text-brand-black lg:px-8">
+        Somos un servicio técnico independiente. No atendemos equipos en garantía oficial.
+      </div>
+
       <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </header>
   );

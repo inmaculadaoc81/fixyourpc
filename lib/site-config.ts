@@ -32,7 +32,7 @@ export const CONTACT = {
   hours: {
     weekdays: '09:30 – 18:00 h',
     weekend: 'Cerrado',
-    display: ['Lunes a viernes: 09:30 – 18:00', 'Sábados y domingos: cerrado'],
+    display: ['Lunes a viernes: 09:30 – 18:00', 'Sábados, domingos y días festivos estamos cerrados'],
   },
   googleBusinessHref: 'https://maps.app.goo.gl/CMeGGACNaf5b25XU8',
   youtubeHref: 'https://www.youtube.com/channel/UCaxAqLD9Mk5gvzqoDedlWSA',
