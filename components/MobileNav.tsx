@@ -1,13 +1,23 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { NAV, CONTACT } from "@/lib/site-config";
 
 export default function MobileNav({ open, onClose }: { open: boolean; onClose: () => void }) {
-  if (!open) return null;
+  // Rendered through a portal straight into <body>: nested inside the sticky
+  // <header>, this "fixed inset-0" overlay was being laid out against the
+  // header's own (short) box instead of the viewport, so it only occupied
+  // ~68px at the top instead of the full screen. Portaling to <body> removes
+  // that ancestor entirely, independent of whatever CSS mechanism caused it.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
-  return (
+  if (!open || !mounted) return null;
+
+  return createPortal(
     <div className="fixed inset-0 z-50 lg:hidden">
       <button
         type="button"
@@ -58,6 +68,7 @@ export default function MobileNav({ open, onClose }: { open: boolean; onClose: (
           </a>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
