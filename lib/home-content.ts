@@ -5,8 +5,8 @@
 
 export const HERO = {
   kicker: "Reparación de portátiles y sobremesa MSI en Madrid",
-  title: "Tu MSI no funciona.",
-  titleWorry: "Lo reparamos y protegemos tus archivos.",
+  title: "Tu MSI se apaga solo o no arranca.",
+  titleWorry: "Diagnóstico gratuito.",
   stats: [
     { value: "0€", label: "diagnóstico sin compromiso" },
     { value: "<24h", label: "tiempo medio de diagnóstico" },
