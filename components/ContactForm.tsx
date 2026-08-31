@@ -81,7 +81,16 @@ export default function ContactForm() {
       <label className="flex items-start gap-2 text-sm text-brand-gray-700">
         <input type="checkbox" name="privacyAccepted" required className="mt-1" />
         <span>
-          Acepto que MSITech use estos datos únicamente para responder a mi consulta. No se comparten con terceros.
+          Acepto la{" "}
+          <a
+            href="https://kelatos.com/privacy-policy/"
+            target="_blank"
+            rel="noopener"
+            className="text-blue-600 underline"
+          >
+            política de privacidad
+          </a>
+          .
         </span>
       </label>
 
