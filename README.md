@@ -110,3 +110,26 @@ npm run build
   aumentado (`text-4xl sm:text-5xl` → `text-5xl sm:text-6xl lg:text-7xl`).
 - Validado con `npm run build` (Next.js) y `npx eslint` sobre todos los archivos
   tocados; ambos pasan sin errores.
+
+## Revisión adicional (checklist unificado de la familia, a petición del cliente — repo 43/48)
+
+- Verificado: `calComEmbedSrc` en `site-config.ts` ya incluye
+  `attendeePhoneNumber` y `overlayCalendar`.
+- Verificado: el correo `soporte@kelatos.com` no aparece visible en ningún componente.
+- Verificado: `whatsappHrefWithText` ya usa "¡Hola MSITECH!" en todos los CTA
+  (Hero, ContactInfoBox, ProblemsSection, WhatsAppButton).
+- Verificado: `MobileNav.tsx` ya cierra el menú al pulsar cualquier enlace
+  (`onClick={onClose}` en cada `Link`).
+- Verificado: sin iconos ni imágenes con proporciones fijas incorrectas.
+- Verificado: el H1 usa `text-5xl` (Tailwind, 48px) como tamaño base para móvil,
+  con `sm:text-6xl lg:text-7xl` en pantallas mayores; ya coincide con el estándar
+  de 48px en móvil de la familia.
+- Verificado: `CTAButton.tsx` ya usa `rounded-full` con estados hover propios en
+  las cinco variantes (red/black/whatsapp/outline/outline-light).
+- Verificado: este repo no usa el patrón de franja de insignias bajo el H1
+  (familia Dyson); no aplica la reubicación.
+- Nota: el H1 documentado en la revisión anterior ("Tu MSI no funciona...") ya
+  no es el actual; `lib/home-content.ts` usa un síntoma específico ("Tu MSI se
+  apaga solo o no arranca."), que no repite la plantilla genérica.
+- Sin cambios de código en este repo: todos los puntos del checklist ya estaban
+  aplicados.
