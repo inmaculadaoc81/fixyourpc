@@ -17,7 +17,7 @@ export const CONTACT = {
   whatsappHrefWithText: (text: string) =>
     `https://api.whatsapp.com/send?phone=+34649970128&text=${encodeURIComponent(text)}`,
   pickupHref: 'https://sis.redsys.es/tiendaWeb/item/NDk4OzI%3D',
-  calComEmbedSrc: 'https://cal.com/kelatos/30min?embed=true&theme=light',
+  calComEmbedSrc: 'https://cal.com/kelatos/30min?embed=true&theme=light&attendeePhoneNumber=%2B34&overlayCalendar=true',
   calComHref: 'https://cal.com/kelatos/30min',
   address: {
     street: 'C. de Joaquín María López, 26',
