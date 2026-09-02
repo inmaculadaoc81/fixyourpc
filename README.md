@@ -133,3 +133,16 @@ npm run build
   apaga solo o no arranca."), que no repite la plantilla genérica.
 - Sin cambios de código en este repo: todos los puntos del checklist ya estaban
   aplicados.
+
+## Revisión adicional (nueva regla de menú móvil, a petición del cliente)
+
+- Verificado: `MobileNav.tsx` se renderiza vía `createPortal` directamente en
+  `document.body` como overlay `fixed inset-0` a pantalla completa, no como un
+  desplegable en el flujo normal del documento dentro de `<header>`. Por esa
+  arquitectura, la franja amarilla de aviso de independencia
+  (`bg-amber-400` dentro de `<header>`) no puede solaparse ni ser empujada por
+  el menú móvil al abrirse — es el mismo bug que se corrigió en el resto de la
+  familia, pero aquí no se manifiesta por el diseño del componente.
+- Verificado: `<header>` ya usa `sticky top-0`; se mantiene fijo/pegado arriba
+  al hacer scroll.
+- Sin cambios de código en este repo.
