@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'MsTech',
   fullName: 'MSITech Servicio Técnico MSI',
-  domain: 'https://www.fixyourpc.es',
+  domain: 'https://fixyourpc.es',
   tagline: 'Servicio técnico especializado en MSI en Madrid',
   description:
     'Reparación de portátiles y sobremesa MSI en Madrid. Diagnóstico gratuito en menos de 24h, piezas originales y garantía de 6 meses. Recogida a domicilio en toda la Península.',
