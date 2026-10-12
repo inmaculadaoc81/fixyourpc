@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "red" | "black" | "whatsapp" | "outline" | "outline-light";
+type Variant = "red" | "black" | "whatsapp" | "outline" | "outline-light" | "teal";
 
 const VARIANT_CLASSES: Record<Variant, string> = {
   red: "bg-brand-red text-white shadow-lg shadow-brand-red/25 hover:bg-brand-red-dark hover:shadow-xl hover:shadow-brand-red/30",
@@ -9,6 +9,7 @@ const VARIANT_CLASSES: Record<Variant, string> = {
   whatsapp: "bg-whatsapp text-white shadow-lg shadow-whatsapp/25 hover:brightness-95",
   outline: "border-2 border-brand-black text-brand-black hover:bg-brand-black hover:text-white",
   "outline-light": "border-2 border-white/40 text-white hover:bg-white hover:text-brand-black",
+  teal: "bg-[#17a398] text-white shadow-lg shadow-[#17a398]/25 hover:bg-[#128075]",
 };
 
 export default function CTAButton({

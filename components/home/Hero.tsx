@@ -42,6 +42,13 @@ export default function Hero() {
               <CTAButton href={CONTACT.phoneHref} variant="outline">
                 Atención telefónica 24 horas 365 días
               </CTAButton>
+              <CTAButton href={CONTACT.whatsappHrefWithText("¡Hola! Quiero un presupuesto")} variant="teal" external>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-4 w-4" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3.5 2" />
+                </svg>
+                Presupuesto en menos de 24 horas
+              </CTAButton>
             </div>
 
             <div className="mt-10 grid max-w-lg grid-cols-3 gap-4">
