@@ -42,15 +42,16 @@ export const CONTACT = {
 
 export type NavItem = { label: string; href: string };
 
-// One-page site: the header only ever links to in-page anchors.
+// The home sections are linked as "/#ancla" (not "#ancla") so the same menu also works from the /blog pages.
 export const NAV: NavItem[] = [
-  { label: '¿Qué te pasa?', href: '#problemas' },
-  { label: 'Tus datos', href: '#datos' },
-  { label: 'Cómo funciona', href: '#como-funciona' },
-  { label: 'Recogida', href: '#recogida' },
-  { label: 'Opiniones', href: '#confianza' },
-  { label: 'Cita', href: '#cita' },
-  { label: 'Guía', href: '#guia' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: '¿Qué te pasa?', href: '/#problemas' },
+  { label: 'Tus datos', href: '/#datos' },
+  { label: 'Cómo funciona', href: '/#como-funciona' },
+  { label: 'Recogida', href: '/#recogida' },
+  { label: 'Opiniones', href: '/#confianza' },
+  { label: 'Agendar cita', href: '/#cita' },
+  { label: 'Guía', href: '/#guia' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Contacto', href: '/#contacto' },
 ];

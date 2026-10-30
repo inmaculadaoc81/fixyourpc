@@ -75,6 +75,55 @@ body {
   @apply -translate-y-0.5 border-brand-gray-200 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.15)];
 }
 
+/* Texto de los artículos del blog (Markdown convertido a HTML en el servidor). */
+.blog-prose {
+  @apply text-lg leading-relaxed text-brand-gray-900;
+}
+.blog-prose h2 {
+  @apply mt-12 mb-3 text-2xl font-extrabold tracking-tight text-brand-black sm:text-3xl;
+}
+.blog-prose h3 {
+  @apply mt-8 mb-2 text-xl font-bold text-brand-black;
+}
+.blog-prose p {
+  @apply mb-5;
+}
+.blog-prose ul,
+.blog-prose ol {
+  @apply mb-6 space-y-2 pl-6;
+}
+.blog-prose ul {
+  @apply list-disc;
+}
+.blog-prose ol {
+  @apply list-decimal;
+}
+.blog-prose a {
+  @apply font-semibold text-brand-red underline;
+}
+.blog-prose blockquote {
+  @apply my-6 rounded-r-xl border-l-4 border-brand-red bg-brand-red-light px-5 py-3;
+}
+.blog-prose img {
+  @apply max-w-full rounded-2xl;
+}
+.blog-prose table {
+  @apply mb-6 block w-full overflow-x-auto border-collapse text-base;
+}
+.blog-prose th,
+.blog-prose td {
+  @apply border border-brand-gray-200 px-3 py-2 text-left;
+}
+.blog-prose th {
+  @apply bg-brand-gray-50;
+}
+.blog-prose code {
+  @apply rounded bg-brand-gray-100 px-1.5 py-0.5 text-[0.92em];
+}
+.blog-prose hr {
+  @apply my-10 border-brand-gray-200;
+}
+
 .eyebrow-pill {
   @apply inline-flex items-center gap-2 rounded-full bg-brand-red-light px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-red;
 }

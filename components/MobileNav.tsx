@@ -18,7 +18,7 @@ export default function MobileNav({ open, onClose }: { open: boolean; onClose: (
   if (!open || !mounted) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-50 lg:hidden">
+    <div className="fixed inset-0 z-50 xl:hidden">
       <button
         type="button"
         aria-label="Cerrar menú"

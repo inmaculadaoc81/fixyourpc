@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-black/10 bg-brand-red/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
-        <Link href="#inicio" className="flex shrink-0 items-center">
+        <Link href="/" className="flex shrink-0 items-center">
           <Image
             src="/images/site/logo.jpg"
             alt="MSITech Servicio Técnico MSI"
@@ -23,19 +23,19 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegación principal">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Navegación principal">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/15"
+              className="rounded-full px-2.5 py-2 text-sm font-medium whitespace-nowrap text-white transition-colors hover:bg-white/15"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <a
             href={CONTACT.phoneHref}
             className="rounded-full bg-white px-4 py-2 text-sm font-semibold whitespace-nowrap text-brand-red shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
@@ -46,7 +46,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="flex items-center justify-center rounded-full p-2 text-white transition-colors hover:bg-white/15 lg:hidden"
+          className="flex items-center justify-center rounded-full p-2 text-white transition-colors hover:bg-white/15 xl:hidden"
           aria-label="Abrir menú"
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(true)}

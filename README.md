@@ -9,25 +9,38 @@ y preocupaciones reales del cliente (no en un listado de modelos o servicios).
 ```
 app/
   page.tsx        Toda la landing (importa las secciones de components/home)
-  [slug]/         Redirección 301 a "/" para cualquier URL antigua no reconocida
+  [...slug]/      Redirección 301 a "/" para cualquier URL antigua no reconocida
+  blog/           Portada del blog y blog/[slug] (artículos de la API de Kelatos, ISR 5 min)
   api/contact/    Envío del formulario por SMTP
-  sitemap.ts      Sitemap de una sola URL
+  sitemap.ts      Sitemap: home, /blog y cada artículo publicado
   robots.ts
 components/
   home/           Secciones de la landing (Hero, Problemas, Datos, Cómo funciona,
                   Recogida, Confianza, Google/YouTube, Cal.com, Contacto)
+  blog/           Tarjeta de artículo y llamada a la acción del blog
   *.tsx           Header, Footer, formulario, chatbot, WhatsApp, mapa, FAQ, etc.
 lib/
   site-config.ts   Datos del negocio (teléfono, WhatsApp, dirección, enlaces)
   home-content.ts  Todo el copy de la landing
+  blog.ts          Lectura de la API pública del blog y Markdown → HTML
 ```
 
 ## Navegación
 
-Es una sola página; el menú usa anclas (`#problemas`, `#datos`, `#como-funciona`,
-`#recogida`, `#confianza`, `#cita`, `#faq`, `#contacto`). Las URLs antiguas de la
-migración anterior (posts de blog, páginas de servicio/idioma) redirigen con 301 a "/"
-o a la sección equivalente (`/contacto` → `/#contacto`, `/blog` → `/#problemas`).
+La home es una sola página; el menú enlaza sus secciones como `/#ancla` (`/#problemas`,
+`/#datos`, `/#como-funciona`, `/#recogida`, `/#confianza`, `/#cita`, `/#guia`, `/#faq`,
+`/#contacto`) para que funcione también desde el blog, más `/blog`. El menú completo se
+muestra desde 1280 px (`xl`); por debajo se usa el menú desplegable. Las URLs antiguas de
+la migración anterior (posts de blog, páginas de servicio/idioma) redirigen con 301 a "/"
+o a la sección equivalente (`/contacto` → `/#contacto`).
+
+## Blog
+
+Los artículos NO viven en este repositorio: los genera y aprueba el agente SEO de Kelatos
+(Agentes V2 → organización «MSITech», clave `msitech`) y se leen de la API pública de
+Kelatos, sin token: `https://db.affirmatechnology.com/kelatos-api/publico/blog?org=msitech`.
+`/blog` y `/blog/<slug>` se regeneran como mucho cada 5 minutos (ISR); un slug que no
+existe en la API devuelve 404.
 
 ## Formulario de contacto
 

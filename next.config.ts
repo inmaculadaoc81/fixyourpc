@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
       // The site is now a single page: old section pages become anchors.
       { source: "/tarifas", destination: "/#contacto", permanent: true },
       { source: "/contacto", destination: "/#contacto", permanent: true },
-      { source: "/blog", destination: "/#problemas", permanent: true },
     ];
   },
 };
