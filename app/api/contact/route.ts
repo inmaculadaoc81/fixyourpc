@@ -2,11 +2,14 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import type { ContactFormData } from "@/types/contact";
 
+const EMAIL_RE = /^[^\s@"(),:;<>[\]\\]+@[^\s@"(),:;<>[\]\\]+\.[a-z]{2,}$/i;
+
 function isValid(data: Partial<ContactFormData>): data is ContactFormData {
   return Boolean(
     data.name?.trim() &&
       data.phone?.trim() &&
       data.email?.trim() &&
+      EMAIL_RE.test(data.email.trim()) &&
       data.message?.trim() &&
       data.privacyAccepted,
   );
@@ -18,6 +21,13 @@ export async function POST(request: Request) {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Solicitud inválida." }, { status: 400 });
+  }
+
+  if (body.website?.trim()) {
+    return NextResponse.json({ ok: true });
+  }
+  if (!body.ts || Date.now() - body.ts < 2000) {
+    return NextResponse.json({ ok: true });
   }
 
   if (!isValid(body)) {

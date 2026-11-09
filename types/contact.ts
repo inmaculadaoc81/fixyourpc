@@ -5,6 +5,8 @@ export type ContactFormData = {
   equipment: string;
   message: string;
   privacyAccepted: boolean;
+  website?: string;
+  ts?: number;
 };
 
 export type ContactFormStatus = "idle" | "sending" | "success" | "error";

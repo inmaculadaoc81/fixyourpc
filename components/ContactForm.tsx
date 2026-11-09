@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useRef, type FormEvent } from "react";
 import { EQUIPMENT_OPTIONS } from "@/lib/home-content";
 import type { ContactFormStatus } from "@/types/contact";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<ContactFormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const loadedAt = useRef(Date.now());
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -14,6 +15,8 @@ export default function ContactForm() {
     const formData = new FormData(form);
 
     const payload = {
+      website: String(formData.get("website") || ""),
+      ts: loadedAt.current,
       name: String(formData.get("name") || ""),
       phone: String(formData.get("phone") || ""),
       email: String(formData.get("email") || ""),
@@ -56,6 +59,14 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <input
+        type="text"
+        name="website"
+        autoComplete="off"
+        tabIndex={-1}
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, width: 0 }}
+      />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Field label="Nombre" name="name" required autoComplete="name" />
         <Field label="Teléfono" name="phone" type="tel" required autoComplete="tel" />
